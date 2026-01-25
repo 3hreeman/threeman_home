@@ -1,0 +1,16 @@
+# How to publish this project to GitHub Pages
+
+1. Ensure the repository is pushed to GitHub:
+   - This project assumes the remote repository is: https://github.com/3hreeman/threeman_home
+   - If you haven't created it yet, go to GitHub and create a public repository named 'threeman_home'.
+
+2. Configure GitHub Pages:
+   - Go to your repository settings on GitHub: https://github.com/3hreeman/threeman_home/settings
+   - Click on the "Pages" section in the left sidebar.
+   - Under "Build and deployment" > "Source", select "Deploy from a branch".
+   - Under "Branch", select "main" (or "master") and the folder "/ (root)".
+   - Click "Save".
+
+3. Verify:
+   - After a minute or two, refresh the Pages settings.
+   - You should see a message saying "Your site is live at..." followed by the URL (usually https://3hreeman.github.io/threeman_home/).
