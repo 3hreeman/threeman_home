@@ -46,6 +46,7 @@ function loadTab(tabName, updateHistory = true) {
         history.pushState(null, null, `#${tabName}`);
     }
 
+    // Load content based on tab name
     const contentDiv = document.getElementById('main-content');
     
     if (tabName === 'home') {
