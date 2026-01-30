@@ -92,19 +92,50 @@ function loadPost(category, postId) {
         return;
     }
 
-    // Add back button
+    // Add back button, markdown container, and Giscus container
     let html = `<a onclick="history.back()" class="back-btn">← Back to ${category}</a>`;
     html += `<div id="markdown-content">Loading content...</div>`;
+    html += `<section class="giscus-container"></section>`;
     contentDiv.innerHTML = html;
 
-    // Load actual markdown content
-    renderMarkdownFile(post.file, document.getElementById('markdown-content'));
+    // Load actual markdown content, then load Giscus
+    renderMarkdownFile(post.file, document.getElementById('markdown-content'))
+        .then(loadGiscus)
+        .catch(error => console.error("Couldn't load post or Giscus", error));
+}
+
+function loadGiscus() {
+    const giscusContainer = document.querySelector('.giscus-container');
+    if (!giscusContainer) return;
+
+    // Clear previous instance to prevent duplicates when navigating
+    while (giscusContainer.firstChild) {
+        giscusContainer.removeChild(giscusContainer.firstChild);
+    }
+
+    const script = document.createElement('script');
+    script.src = 'https://giscus.app/client.js';
+    script.setAttribute('data-repo', '3hreeman/threeman_home');
+    script.setAttribute('data-repo-id', 'R_kgDORA777Q');
+    script.setAttribute('data-category', 'Ideas');
+    script.setAttribute('data-category-id', 'DIC_kwDORA777c4C1pro');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'bottom');
+    script.setAttribute('data-theme', 'preferred_color_scheme');
+    script.setAttribute('data-lang', 'ko');
+    script.crossOrigin = 'anonymous';
+    script.async = true;
+
+    giscusContainer.appendChild(script);
 }
 
 function renderMarkdownFile(filePath, container) {
-    fetch(filePath)
+    return fetch(filePath)
         .then(response => {
-            if (!response.ok) throw new Error('Network response was not ok');
+            if (!response.ok) throw new Error(`Network response was not ok for ${filePath}`);
             return response.text();
         })
         .then(text => {
@@ -113,5 +144,6 @@ function renderMarkdownFile(filePath, container) {
         .catch(error => {
             console.error('Error loading markdown:', error);
             container.innerHTML = `<p>Error loading content. Please try again later. (Path: ${filePath})</p>`;
+            throw error; // Re-throw to allow .catch in the caller to handle it
         });
 }
