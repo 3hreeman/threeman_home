@@ -1,10 +1,10 @@
-# 안녕하세요, 3hreeman입니다.
+# 3hreeman's Home
 
-이곳은 저의 개인적인 생각을 정리하고 기록을 남기는 공간입니다.
+다양한 것들을 남기고 기록해보자.
 
 ## About Me
 * **Role**: Software Engineer
-* **Interests**: Web Development, Reading, Archiving
+* **Interests**: Client, Reading, Archiving
 * **Goal**: 2026년에는 꾸준히 기록하기
 
 ## Contact
