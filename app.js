@@ -51,7 +51,10 @@ function loadTab(tabName, updateHistory = true) {
     
     if (tabName === 'home') {
         renderMarkdownFile('content/home.md', contentDiv);
-    } else if (tabName === 'book' || tabName === 'archive') {
+    } else if(tabName === 'about') {
+		renderMarkdownFile('content/about.md', contentDiv);
+	}
+	else if (tabName === 'book' || tabName === 'archive') {
         renderPostList(tabName, contentDiv);
     } else {
         contentDiv.innerHTML = '<p>Page not found.</p>';

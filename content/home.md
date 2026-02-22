@@ -1,4 +1,4 @@
-# 3hreeman's Home
+# What I Like
 
 나는 생각하는 것을 좋아한다. 진지한 고민도, 허황된 공상도 상관없다. 그런 생각을 하며 깊이 빠져드는 기분이 좋다.  
 나는 책 읽는 것도 좋아한다. 책을 읽고 있노라면 현생에서 벗어나서 다른 누군가의 삶을 체험하는 것 같은 느낌을 받는다.  
@@ -16,12 +16,3 @@
 어떨 땐 투박하게, 또 어떨 땐 시간과 공을 들여 보기 좋게 다듬어서,  
 
 이 글을 보고있을 지금의 그대들과 먼 훗날의 나를 위해 남길 것이다.
-
-
-## About Me
-* **Role**: Software Engineer
-* **Interests**: Client, Reading, Archiving
-* **Goal**: 2026년에는 꾸준히 기록하기
-
-## Contact
-* GitHub: [github.com/3hreeman](https://github.com/3hreeman)
